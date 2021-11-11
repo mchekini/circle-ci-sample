@@ -11,9 +11,9 @@ jobs:
       - image: openjdk
     steps:
       - checkout
-      - command:
+      - run:
           name: show java version
-          run: java --version
+          command: java --version
 workflows:
   say-hello-workflow:
     jobs:
