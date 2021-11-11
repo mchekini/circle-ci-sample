@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   say-hello:
     docker:
@@ -19,6 +18,9 @@ jobs:
       - run:
           name: "step 2"
           command: "echo step 2"
+      - run:
+          name: "echo env variables"
+          command: "echo $API_KEY"
 workflows:
   say-hello-workflow:
     jobs:
