@@ -11,10 +11,13 @@ jobs:
       - image: openjdk
     steps:
       - checkout
+      - command:
+          name: show java version
+          run: java --version
 workflows:
   say-hello-workflow:
     jobs:
       - build
-      - maven/build:
+      - maven/test:
           requires:
             - build
