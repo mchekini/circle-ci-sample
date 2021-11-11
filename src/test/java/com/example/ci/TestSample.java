@@ -14,6 +14,6 @@ public class TestSample {
 
     @Test
     public void itShouldFail() {
-        Assertions.assertEquals(10, 5 + 6);
+        Assertions.assertEquals(11, 5 + 6);
     }
 }
