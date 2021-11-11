@@ -21,3 +21,4 @@ workflows:
       - maven/test:
           requires:
             - build
+          command: build -x test
