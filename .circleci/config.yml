@@ -1,4 +1,10 @@
 version: 2.1
+
+
+orbs:
+  maven: circleci/maven@1.2.0
+
+
 jobs:
   build:
     docker:
@@ -9,3 +15,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - build
+      - maven/test
