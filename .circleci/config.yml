@@ -1,30 +1,11 @@
 version: 2.1
 jobs:
-  say-hello:
+  build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/java:stable
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-  mahdi-job:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - run:
-          name: "step 1"
-          command : "echo step 1"
-      - run:
-          name: "step 2"
-          command: "echo step 2"
-      - run:
-          name: "echo env variables"
-          command: "echo $API_KEY"
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
-      - mahdi-job:
-           requires:
-             - say-hello
+      - build
