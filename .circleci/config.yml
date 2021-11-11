@@ -25,6 +25,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - mahdi-job
+      - mahdi-job:
            requires:
              - say-hello
