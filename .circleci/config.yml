@@ -26,7 +26,6 @@ jobs:
             echo env 2 variable $CIRCLE_BUILD_NUM
       - store_artifacts:
           path: ./src/main/resources
-          destination: application.properties
   run:
     docker:
       - image: openjdk
