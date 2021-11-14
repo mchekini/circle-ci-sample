@@ -14,10 +14,23 @@ jobs:
       - run:
           name: show java version
           command: java --version
+      - persist_to_workspace:
+          root: ./src/main
+          paths:
+            - resources
+  run:
+    docker:
+      - image: openjdk
+    steps:
+      - attach_workspace:
+          at: /test
       - run:
-          name: installation de maven
-          command: apt-get update && apt-get install maven
+          name: listing directory
+          command: ls /test
 workflows:
   say-hello-workflow:
     jobs:
       - build
+      - run:
+          requires:
+            - build
