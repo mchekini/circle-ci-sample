@@ -22,7 +22,7 @@ jobs:
           name: multiple commands
           command: |
             echo "test"
-            echo " env variable << CIRCLE_BUILD_NUM  <<"
+            echo env variable $CIRCLE_BUILD_NUM
   run:
     docker:
       - image: openjdk
