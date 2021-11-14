@@ -20,9 +20,13 @@ jobs:
             - resources
       - run:
           name: multiple commands
-          command:
+          command: |
             echo "test"
             echo env variable $CIRCLE_BUILD_NUM
+            echo env 2 variable $CIRCLE_BUILD_NUM
+      - store_artifacts:
+          path: ./src/main/resources
+          destination: application.properties
   run:
     docker:
       - image: openjdk
