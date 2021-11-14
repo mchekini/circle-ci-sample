@@ -26,7 +26,7 @@ jobs:
           at: /test
       - run:
           name: listing directory
-          command: ls /test
+          command: ls /test/resources
 workflows:
   say-hello-workflow:
     jobs:
